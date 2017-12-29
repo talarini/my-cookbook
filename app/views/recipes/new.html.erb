@@ -1,26 +1,29 @@
 <%= form_for(@recipe) do |f| %>
 
-  <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
+<%= f.label :title, 'Título' %>
+<%= f.text_field :title %>
 
-  <%= f.label :recipe_type, 'Tipo da Receita' %>
-  <%= f.text_field :recipe_type %>
+<%= f.label :recipe_type, 'Tipo da Receita' %>
+<%= f.text_field :recipe_type %>
 
-  <%= f.label :cuisine, 'Cozinha' %>
-  <%= f.text_field :cuisine %>
+<%= f.label :cuisine, 'Cozinha' %>
+<%= f.text_field :cuisine %>
 
-  <%= f.label :difficulty, 'Dificuldade' %>
-  <%= f.text_field :difficulty %>
+<%= f.label :portion, 'Quantidade de Porções' %>
+<%= f.text_field :portion %>
 
-  <%= f.label :cook_time, 'Tempo de Preparo' %>
-  <%= f.text_field :cook_time %>
+<%= f.label :difficulty, 'Dificuldade' %>
+<%= f.select(:difficulty, options_for_select([['Fácil', 'Fácil'], ['Medio', 'Medio'], ['Dificil', 'Difícil']]))%>
 
-  <%= f.label :ingredients, 'Ingredientes' %>
-  <%= f.text_field :ingredients %>
+<%= f.label :cook_time, 'Tempo de Preparo' %>
+<%= f.number_field :cook_time %>
 
-  <%= f.label :method, 'Como Preparar' %>
-  <%= f.text_field :method %>
+<%= f.label :ingredients, 'Ingredientes' %>
+<%= f.text_field :ingredients %>
 
-  <%= f.submit 'Enviar'%>
+<%= f.label :method, 'Como Preparar' %>
+<%= f.text_field :method %>
+
+<%= f.submit 'Enviar'%>
 
 <% end %>

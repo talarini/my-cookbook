@@ -1,4 +1,10 @@
 class RecipeTypesController < ApplicationController
+
+  def show
+    @recipe_types = RecipeType.find(params[:id])
+    @recipes = Recipe.where(recipe_type_id: params[:id])
+  end
+
   def new
     @recipe_type = RecipeType.new
   end
@@ -12,10 +18,6 @@ class RecipeTypesController < ApplicationController
     end
   end
 
-  def show
-    @recipe_type = RecipeType.find(params[:id])
-    @recipes = Recipe.where(recipe_type_id: params[:id])
-  end
 
   private
 

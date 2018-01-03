@@ -1,5 +1,10 @@
 class CuisinesController < ApplicationController
 
+  def show
+    @cuisines = Cuisine.find(params[:id])
+    @recipes = Recipe.where(cuisine_id: params[:id])
+  end
+
   def new
     @cuisine = Cuisine.new
   end
@@ -11,11 +16,6 @@ class CuisinesController < ApplicationController
     else
       render '_error'
     end
-  end
-
-  def show
-    @cuisine = Cuisine.find(params[:id])
-    @recipes = Recipe.where(cuisine_id: params[:id])
   end
 
   private

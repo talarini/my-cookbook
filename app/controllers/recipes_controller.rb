@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
-    redirect_to recipe_path(@recipe)
+    redirect_to recipe_path
   end
 
   def show
@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :recipe_type, :cuisine, :difficulty, :cook_time, :ingredients, :method, :portion)
+    params.require(:recipe).permit(:title, :recipe_type, :cuisine, :difficulty, :cook_time, :ingredients, :method, :portion, :recipe_id)
   end
 
 end

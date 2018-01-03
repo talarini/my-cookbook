@@ -1,13 +1,13 @@
-<%= form_for(@recipe) do |f| %>
+<%= form_for (@recipe) do |f| %>
 
 <%= f.label :title, 'Título' %>
 <%= f.text_field :title %>
 
 <%= f.label :recipe_type, 'Tipo da Receita' %>
-<%= f.text_field :recipe_type %>
+<%= collection_select(:recipe_type, :recipe_type_id, RecipeType.all, :id, :name) %>
 
 <%= f.label :cuisine, 'Cozinha' %>
-<%= f.text_field :cuisine %>
+<%= collection_select(:cuisine, :cuisine_id, Cuisine.all, :id, :name) %>
 
 <%= f.label :portion, 'Quantidade de Porções' %>
 <%= f.text_field :portion %>

@@ -2,6 +2,15 @@
 <p>Bem-vindo ao maior livro de receitas online</p>
 <nav>
   <ul>
+    <li>
+      <%= form_tag('/search',method: "get") do %>
+      <div>
+        <%= label_tag :search, 'Busca' %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Buscar' %>
+      </div>
+      <%end%>
+    </li>
     <li><%= link_to('Enviar uma receita', new_recipe_path) %></li>
   </ul>
 </nav>

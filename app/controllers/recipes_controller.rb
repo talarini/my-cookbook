@@ -32,6 +32,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def search
+    @recipe_search = params[:search]
+    @recipes = Recipe.where 'title like ?', "%#{@recipe_search}"
+  end
+
 
 
 private
